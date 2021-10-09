@@ -1,22 +1,8 @@
 {
-  "name": "sirikon.me",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "SHOW_UNPUBLISHED=true pitch serve",
     "build": "pitch build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sirikon/sirikon.me.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Sirikon/sirikon.me/issues"
-  },
-  "homepage": "https://github.com/Sirikon/sirikon.me#readme",
   "dependencies": {
     "pitch-cli": "~0.11.0"
   }
