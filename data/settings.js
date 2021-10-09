@@ -9,7 +9,7 @@ const job = {
     get currentPosition() { return job.positions[0] },
     positions: [
         {
-            role: 'Software Developer',
+            role: 'Full Stack Engineer',
             company: {
                 name: 'Lookiero',
                 url: 'https://lookiero.es/'
