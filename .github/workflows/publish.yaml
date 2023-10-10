@@ -7,4 +7,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Publish
+        env:
+          NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
         run: ./modules/scripts/publish.sh

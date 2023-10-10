@@ -6,4 +6,6 @@ docker compose \
   -f "${root}/docker-compose.yml" \
   -f "${root}/modules/docker/docker-compose.base.yml" \
   -f "${root}/modules/docker/docker-compose.publish.yml" \
-  run --build sirikon-neocities ls -lah /
+  run --build \
+  -e NEOCITIES_API_KEY="${NEOCITIES_API_KEY}" \
+  sirikon-neocities neocities push ./modules/website
