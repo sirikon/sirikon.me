@@ -1,0 +1,23 @@
+{
+  "name": "Sirikon Neocities",
+  "dockerComposeFile": [
+    "./docker-compose.yml",
+    "./modules/docker/docker-compose.yml"
+  ],
+  "service": "sirikon-neocities",
+  "overrideCommand": true,
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "humao.rest-client",
+        "foxundermoon.shell-format",
+        "timonwong.shellcheck"
+      ]
+    }
+  }
+}

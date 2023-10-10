@@ -1,0 +1,3 @@
+# Empty docker-compose file to force
+# project directory on VSCode Dev Containers
+services: {}

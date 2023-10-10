@@ -1,0 +1,53 @@
+{
+  "folders": [
+    {
+      "name": "Website",
+      "path": "./modules/website"
+    },
+    {
+      "name": "Docker",
+      "path": "./modules/docker"
+    },
+    {
+      "name": "GitHub Workflows",
+      "path": "./.github/workflows"
+    },
+    {
+      "name": "Root",
+      "path": "."
+    },
+  ],
+  "settings": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features",
+      "files.insertFinalNewline": true
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features",
+      "files.insertFinalNewline": true
+    },
+    "[dockerfile]": {
+      "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.tabSize": 4,
+    },
+    "files.exclude": {
+      "**/__pycache__": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "redhat.vscode-yaml",
+      "ms-azuretools.vscode-docker",
+      "ms-python.python",
+      "ms-python.black-formatter"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+name: Publish to Neocities
+on: [push]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Docker environment
+        run: docker compose -f docker-compose.yml -f modules/docker/docker-compose.yml build
