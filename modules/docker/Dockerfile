@@ -1,5 +1,5 @@
 FROM debian:bookworm-slim AS base
-WORKDIR /workdir
+WORKDIR /workspace
 
 # # http://git.elenq.tech/guile-neocities/
 # RUN apt-get update && \
