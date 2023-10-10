@@ -2,7 +2,8 @@
   "name": "Sirikon Neocities",
   "dockerComposeFile": [
     "./docker-compose.yml",
-    "./modules/docker/docker-compose.yml"
+    "./modules/docker/docker-compose.base.yml",
+    "./modules/docker/docker-compose.dev-container.yml"
   ],
   "service": "sirikon-neocities",
   "overrideCommand": true,
