@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sirikon's Neocities</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <div class="sn-container">
+    <header class="sn-header">
+      <a href="/" class="sn-discrete-link">Sirikon's Neocities</a>
+      <ul class="sn-header-menu">
+        <li><a href="/">home</a></li>
+        <li><a href="https://sirikon.me/about">about</a></li>
+      </ul>
+    </header>
+
+    <article>
+      {% block content %}{% endblock %}
+    </article>
+
+    <footer class="sn-footer">
+      {% include '_templates/neocities-banner.html' %}
+    </footer>
+  </div>
+
+</body>
+
+</html>

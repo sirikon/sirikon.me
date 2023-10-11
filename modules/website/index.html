@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html>
+{% extends "_templates/base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sirikon's Neocities</title>
-</head>
-
-<body>
-  <h1>Sirikon's Neocities</h1>
-  <p>
-    <a href="https://github.com/sirikon/sirikon-neocities">Work in progress</a>
-  </p>
-  <p>
-    {% include '_templates/neocities-banner.html' %}
-  </p>
-</body>
-
-</html>
+{% block content %}
+<ul class="sn-post-list">
+  {% for post in posts %}
+  <li>
+    <span class="sn-post-number">{{post.number}}</span>
+    <a href="/posts/{{post.slug}}.html">{{post.meta.title[0]}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

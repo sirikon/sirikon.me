@@ -1,0 +1,79 @@
+body {
+  background-color: whitesmoke;
+  font-family: monospace;
+  margin: 0 1em;
+}
+
+a:not(.sn-discrete-link) {
+  text-decoration: none;
+  color: orangered;
+}
+
+a:not(.sn-discrete-link):hover {
+  background-color: orangered;
+  color: white;
+}
+
+article {
+  margin: 2em 0;
+}
+
+.sn-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.sn-header {
+  /* border-bottom: 2px solid orangered; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: .8em 0;
+}
+
+.sn-header > a {
+  display: block;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sn-header-menu {
+  margin: 0 0 0 1em;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.sn-header-menu li a::before {
+  content: '[';
+}
+.sn-header-menu li a::after {
+  content: ']';
+}
+
+.sn-post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sn-post-number {
+  color: grey;
+}
+
+.sn-footer {
+  /* border-top: 2px solid orangered; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sn-neocities-banner {
+  display: inline-block;
+}
+
+.sn-neocities-banner .has-accent {
+  color: orangered;
+}
