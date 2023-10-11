@@ -9,4 +9,4 @@ jobs:
       - name: Publish
         env:
           NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
-        run: ./modules/scripts/publish.sh
+        run: ./modules/scripts/docker-compose-run.sh publish

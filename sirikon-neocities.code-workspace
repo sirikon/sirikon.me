@@ -5,16 +5,20 @@
       "path": "./modules/website"
     },
     {
+      "name": "Generator",
+      "path": "./modules/generator"
+    },
+    {
       "name": "Docker",
       "path": "./modules/docker"
     },
     {
-      "name": "GitHub Workflows",
-      "path": "./.github/workflows"
-    },
-    {
       "name": "Scripts",
       "path": "./modules/scripts"
+    },
+    {
+      "name": "GitHub Workflows",
+      "path": "./.github/workflows"
     },
     {
       "name": "Root",
@@ -46,12 +50,33 @@
       "**/__pycache__": true
     }
   },
-  "extensions": {
-    "recommendations": [
-      "redhat.vscode-yaml",
-      "ms-azuretools.vscode-docker",
-      "ms-python.python",
-      "ms-python.black-formatter"
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "python",
+        "name": "Sirikon Neocities Generator",
+        "request": "launch",
+        "module": "sirikon-neocities",
+        "cwd": "${workspaceFolder:Root}",
+        "args": [
+          "watch"
+        ],
+        "console": "integratedTerminal",
+      },
+      {
+        "type": "python",
+        "name": "Serve Output",
+        "request": "launch",
+        "module": "http.server",
+        "cwd": "${workspaceFolder:Root}",
+        "args": [
+          "--directory",
+          "output",
+          "80"
+        ],
+        "console": "integratedTerminal",
+      }
     ]
   }
 }

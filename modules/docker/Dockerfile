@@ -1,5 +1,5 @@
-FROM debian:bookworm-slim AS base
-WORKDIR /workspace
+FROM python:3.12-slim-bookworm AS base
+WORKDIR /build
 
 # # http://git.elenq.tech/guile-neocities/
 # RUN apt-get update && \
@@ -13,3 +13,9 @@ WORKDIR /workspace
 RUN apt-get update && \
   apt-get install -y ruby-full && \
   gem install neocities  
+
+COPY ./modules/generator/requirements.txt .
+RUN pip install -r requirements.txt
+
+WORKDIR /workspace
+ENV PYTHONPATH="/workspace/modules/generator"
