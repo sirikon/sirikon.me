@@ -64,7 +64,6 @@ article {
 }
 
 .sn-footer {
-  /* border-top: 2px solid orangered; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
