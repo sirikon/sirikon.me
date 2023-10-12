@@ -28,6 +28,12 @@
   "settings": {
     "editor.detectIndentation": false,
     "editor.tabSize": 2,
+    "[markdown]": {
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wrappingIndent": "same",
+      "editor.wordWrapColumn": 80
+    },
     "[json]": {
       "editor.defaultFormatter": "vscode.json-language-features",
       "files.insertFinalNewline": true

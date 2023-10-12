@@ -11,13 +11,14 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "redhat.vscode-yaml",
-        "ms-azuretools.vscode-docker",
-        "ms-python.python",
-        "ms-python.black-formatter",
-        "foxundermoon.shell-format",
-        "timonwong.shellcheck"
-      ]
+		"redhat.vscode-yaml",
+		"ms-azuretools.vscode-docker",
+		"ms-python.python",
+		"ms-python.black-formatter",
+		"foxundermoon.shell-format",
+		"timonwong.shellcheck",
+		"yzhang.markdown-all-in-one"
+	]
     }
   }
 }

@@ -14,7 +14,7 @@ def get_post(slug):
 
     number = match.group(1)
     file = os.path.join("./modules/website/posts", slug + ".md")
-    md = markdown.Markdown(output_format="html5", extensions=["meta"])
+    md = markdown.Markdown(output_format="html5", extensions=["extra", "meta"])
     html = md.convert(Path(file).read_text())
     return {"slug": slug, "number": number, "html": html, "meta": md.Meta}
 
