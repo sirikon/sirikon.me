@@ -13,6 +13,6 @@ python -m sirikon-neocities build
 cd "./output"
 while IFS='\n' read -r line; do
   echo "Uploading ${line:1}"
-  neocities upload "${line}" "${line:1}"
+  NEOCITIES_KEY="${NEOCITIES_API_KEY}" neocities upload "${line}" "${line:1}"
   echo ""
 done <<< "$(find ./ -type f)"
