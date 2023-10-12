@@ -8,4 +8,4 @@ docker compose \
   -f "${root}/modules/docker/docker-compose.publish.yml" \
   run --build \
   -e NEOCITIES_API_KEY="${NEOCITIES_API_KEY:-""}" \
-  sirikon-neocities "/workspace/modules/scripts/${1}.sh"
+  sirikon-neocities "/workspace/modules/scripts/publish.sh"

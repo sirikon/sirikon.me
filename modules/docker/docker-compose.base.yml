@@ -3,3 +3,4 @@ services:
     build:
       context: ./
       dockerfile: ./modules/docker/Dockerfile
+      target: base
