@@ -38,10 +38,10 @@ HONK. HEY STRANGER. GET OFF MY LAWN.
 BANG. BANG.
 ```
 
-Let's say you want to make gooses more polite.
+Let's say you want to make geese more polite.
 
 ```python
-def make_gooses_polite():
+def make_geese_polite():
     # pick the old method if you need it.
     old_honk = Goose.honk
 
@@ -60,7 +60,7 @@ def make_gooses_polite():
     Goose.honk = new_honk
 
 
-make_gooses_polite()
+make_geese_polite()
 g.do_your_thing()
 ```
 
@@ -75,5 +75,7 @@ BANG. BANG.
 ```
 
 Use this power wisely.
+
+EDIT: Replacing "gooses" with "geese" because I'm an uneducated fuck.
 
 *[neckbeard]: Demonym for StackOverflow and subreddits about programming
