@@ -31,7 +31,7 @@ article {
   padding: .8em 0;
 }
 
-.sn-header > a {
+.sn-header>a {
   display: block;
   font-size: 1em;
   text-transform: uppercase;
@@ -50,6 +50,7 @@ article {
 .sn-header-menu li a::before {
   content: '[';
 }
+
 .sn-header-menu li a::after {
   content: ']';
 }
@@ -71,4 +72,12 @@ article {
 
 .sn-neocities-banner {
   display: inline-block;
+}
+
+.codehilite {
+  background: #fdfdfd;
+}
+
+.codehilite pre {
+  padding: 1em;
 }
