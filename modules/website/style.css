@@ -79,5 +79,8 @@ article {
 }
 
 .codehilite pre {
+  margin: 1em 0;
   padding: 1em;
+  overflow-y: hidden;
+  overflow-x: auto;
 }

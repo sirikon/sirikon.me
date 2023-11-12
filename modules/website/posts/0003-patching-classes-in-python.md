@@ -56,6 +56,7 @@ def make_geese_polite():
         print("-- Original Goose")
         # call the old method by passing `self`
         old_honk(self, name)
+        print("-- End")
 
     Goose.honk = new_honk
 
@@ -71,6 +72,7 @@ Good evening Stranger. May you please get off my lawn.
 -- Original Goose
 I'm AmericanGoose
 HONK. HEY STRANGER. GET OFF MY LAWN.
+-- End
 BANG. BANG.
 ```
 
