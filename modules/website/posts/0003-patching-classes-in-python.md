@@ -32,7 +32,7 @@ g = AmericanGoose()
 g.do_your_thing()
 ```
 
-```
+```text
 I'm AmericanGoose
 HONK. HEY STRANGER. GET OFF MY LAWN.
 BANG. BANG.
@@ -65,7 +65,7 @@ make_geese_polite()
 g.do_your_thing()
 ```
 
-```
+```text
 -- Polite Goose
 I'm AmericanGoose
 Good evening Stranger. May you please get off my lawn.
