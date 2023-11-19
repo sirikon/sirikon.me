@@ -70,7 +70,7 @@ COPY ./poetry.lock /app/poetry.lock
 
 We're inside a Docker build, no stdin can help you here, so use `--no-interaction` in `poetry install`.
 
-Poetry assumes you always want a full fledged Python package, _again_, and tries to build stuff which involves verifying that your code is actually where it's supposed to be. If your project is called `goatse`, will look for the `goatse` folder and fail, because it isn't there, because we're trying to optimize the Docker build. Add `--no-root` and dodge the issue.
+Poetry assumes you always want a full fledged Python package, _again_, and tries to build stuff which involves verifying that your code is actually where it's supposed to be. If your project is called `goatse`, will look for the `goatse` folder and fail, because it isn't there yet, because we're trying to optimize the Docker build. Add `--no-root` and dodge the issue.
 
 ```dockerfile
 RUN cd /app && poetry install --no-root --no-interaction
