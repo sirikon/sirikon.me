@@ -8,9 +8,9 @@ In Python there are three modules that will help you to achieve your perfectly s
 
 ## [multiprocessing](https://docs.python.org/3/library/multiprocessing.html)
 
-Imagine executing the `python ...` command multiple times, but them having a way to talk with each other to sync and pass information.
+Imagine executing the `python` command multiple times, but them having a way to talk with each other to sync and pass information.
 
-Creating processes here mean creating actual operating system processes, each with it's own Python interpreter, memory, and all the overhead involved.
+Creating processes here mean creating **actual operating system processes**, each with it's own Python interpreter, memory, and all the overhead involved.
 
 Processes look all the same to the OS, and the OS will assign CPU time to each process by its own criteria.
 
@@ -22,7 +22,7 @@ You can communicate between processes by:
 
 ## [threading](https://docs.python.org/3/library/threading.html)
 
-Creating threads here mean creating actual operating system threads. This way we have a single process with a single Python interpreter and memory space, but with multiple threads working on it independently.
+Creating threads here mean creating **actual operating system threads**. This way we have a single process with a single Python interpreter and memory space, but with multiple threads working on it independently.
 
 Threads look all the same to the OS, and the OS will assign CPU time to each thread by its own criteria.
 
@@ -40,7 +40,7 @@ So there's this thing popularized by JavaScript called an Event Loop in which in
 
 Python has exactly that, even with the `async/await` keywords, because life is nothing without [color](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/).
 
-The event loop is implemented in Python and uses a mechanism provided by the operating system to have a map of pending IO and functions to be called back whenever the pending IO is completed. This is the only way in Python to have concurrency with scheduling that knows which tasks can continue and which ones can't because their IO hasn't resolved yet.
+The event loop is implemented in Python and uses a mechanism provided by the operating system to have a map of pending IO and functions to be called back whenever the pending IO is completed. This is the only way in Python to have **concurrency with scheduling that knows which tasks can continue** and which ones can't because their IO hasn't resolved yet.
 
 This means that every IO operation needs to be performed "the async way" to take advantage of the event loop instead of blocking the thread.
 

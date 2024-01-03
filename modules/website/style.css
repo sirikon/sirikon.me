@@ -74,6 +74,16 @@ article {
   display: inline-block;
 }
 
+article code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0 .3em;
+}
+
+article .codehilite code {
+  background-color: initial;
+  padding: initial;
+}
+
 .codehilite {
   background: #fdfdfd;
 }
