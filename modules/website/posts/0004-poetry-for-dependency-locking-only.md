@@ -16,10 +16,10 @@ curl -sSL https://install.python-poetry.org | python3 -
 Poetry assumes you always want virtual envs, but you don't.
 
 ```bash
-poetry config virtualenvs.create false 
+poetry config virtualenvs.create false
 ```
 
-Poetry assumes you always want a full fledged Python package so you can publish it on PyPI and ashame your friends and colleagues, but you don't. Sadly, Poetry doesn't care about your feelings, so you'll need to add tons of unnecessary shit anyway.
+Poetry assumes you always want a full fledged Python package so you can publish it on PyPI and ashame your friends and colleagues, but you don't. Sadly, Poetry doesn't care about your feelings, so you'll need to add tons of unnecessary shit in your `pyproject.toml` anyway.
 
 ```toml
 [tool.poetry]
@@ -47,7 +47,7 @@ The pain isn't over.
 ENV POETRY_VERSION 1.7.1
 ```
 
-Changing `POETRY_HOME` isn't necessary, but looking into the documentation to know what's the actual place it puts poetry by default so you can extend `PATH` *is* necessary. Now making `POETRY_HOME` explicit doesn't sound that bad huh.
+Changing `POETRY_HOME` isn't necessary, but looking into the documentation to know what's the actual place it puts poetry by default so you can extend `PATH` _is_ necessary. Now making `POETRY_HOME` explicit doesn't sound that bad huh.
 
 ```dockerfile
 ENV POETRY_HOME /poetry
@@ -61,7 +61,7 @@ RUN curl -sSL https://install.python-poetry.org | python -
 RUN poetry config virtualenvs.create false
 ```
 
-It's good practice to copy first the files containing the dependencies, install them, and *then* copy the rest of the sources, so rebuilding because the code changed doesn't take forever. Optimize your Docker cache folks.
+It's good practice to copy first the files containing the dependencies, install them, and _then_ copy the rest of the sources, so rebuilding because the code changed doesn't take forever. Optimize your Docker cache folks.
 
 ```dockerfile
 COPY ./pyproject.toml /app/pyproject.toml
