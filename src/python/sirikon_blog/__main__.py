@@ -22,23 +22,7 @@ def post_context(template):
 
 
 def atom_context():
-    fg = FeedGenerator()
-    fg.id(f"https://{DOMAIN}")
-    print(date_zero)
-    # fg.updated(date_zero)
-    fg.title("Sirikon's Neocities")
-    fg.author({"name": "Carlos Fdez. Llamas", "email": "hello@sirikon.me"})
-    fg.language("en")
-
-    posts = get_posts()
-    for post in posts:
-        fe = fg.add_entry()
-        fe.id(f"https://{DOMAIN}/posts/{post.slug}")
-        # fe.updated(date_zero)
-        fe.title(post.title)
-        fe.content(post.content_html, type="html")
-
-    return {"content": fg.atom_str(pretty=True).decode()}
+    return {"posts": reversed(get_posts())}
 
 
 def render_post(site, template, **kwargs):

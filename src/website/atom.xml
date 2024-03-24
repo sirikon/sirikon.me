@@ -1,1 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://sirikon.neocities.org/</id>
+  <title>Sirikon's Neocities</title>
+  <link href="https://sirikon.neocities.org/atom.xml" rel="self" />
+  <!-- <updated>2024-03-13T17:06:06+01:00</updated> -->
+
+  {% for post in posts %}
+  <entry>
+    <id>https://sirikon.neocities.org/posts/{{post.slug}}</id>
+    <title>{{post.title}}</title>
+    <link href="https://sirikon.neocities.org/posts/{{post.slug}}" rel="alternate">
+    <!-- <published>2024-03-13T17:06:06+01:00</published>
+    <updated>2024-03-13T17:06:06+01:00</updated> -->
+    <author>
+      <name>Carlos Fdez. Llamas</name>
+      <email>hello@sirikon.me</email>
+    </author>
+    <content type="html">{{post.content_html_escaped}}</content>
+  </entry>
+  {% endfor %}
+
+</feed>
 {{content|safe}}

@@ -3,6 +3,7 @@ from os import listdir
 from os.path import join
 from pathlib import Path
 from dataclasses import dataclass
+from html import escape
 
 import markdown
 
@@ -14,6 +15,7 @@ class Post:
     slug: str
     title: str
     content_html: str
+    content_html_escaped: str
 
 
 def get_post(slug):
@@ -34,6 +36,7 @@ def get_post(slug):
         slug=slug,
         title=md.Meta["title"][0],
         content_html=html,
+        content_html_escaped=escape(html),
     )
 
 
