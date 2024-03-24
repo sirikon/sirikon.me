@@ -6,7 +6,8 @@ TAG="sirikon-blog-devenv:$(date -u '+%Y%m%d_%H%M%S')"
 docker build \
   --build-arg PYTHON_VERSION="${PYTHON_VERSION}" \
   --file docker/Dockerfile \
-  --tag "${TAG}"
+  --tag "${TAG}" \
+  .
 
 docker run \
   -t -v ./:/wd \
