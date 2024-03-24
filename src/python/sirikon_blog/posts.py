@@ -3,55 +3,51 @@ from os import listdir
 from os.path import join
 from pathlib import Path
 from dataclasses import dataclass
-from html import escape
+from datetime import datetime, timezone
 
 import markdown
+
+POSTS_PATH = "src/website/posts"
+POST_SLUG_REGEXP = r"^([0-9]+)-.+"
 
 
 @dataclass
 class Post:
-    number: str
-    number_int: int
-    date: str
     slug: str
+    number: int
     title: str
+    date: datetime
     content_html: str
-    content_html_escaped: str
 
 
 def get_post(slug):
-    match = re.search(r"^([0-9]+)-", slug)
-    if not match:
-        return None
-
-    number = match.group(1)
-    file = join("./src/website/posts", slug + ".md")
+    number = int(re.match(POST_SLUG_REGEXP, slug).group(1))
+    post_file = join(POSTS_PATH, slug + ".md")
     md = markdown.Markdown(
         output_format="html5", extensions=["extra", "meta", "codehilite"]
     )
-    html = md.convert(Path(file).read_text())
+    html = md.convert(Path(post_file).read_text())
 
     return Post(
-        number=number,
-        number_int=int(number),
-        date=md.Meta["date"][0],
         slug=slug,
+        number=number,
         title=md.Meta["title"][0],
+        date=datetime.strptime(md.Meta["date"][0], "%Y-%m-%d %H:%M").replace(
+            tzinfo=timezone.utc
+        ),
         content_html=html,
-        content_html_escaped=escape(html),
     )
 
 
 def get_posts():
-    slugs = list(
-        reversed(sorted(f.removesuffix(".md") for f in listdir("./src/website/posts")))
+    return sorted(
+        [get_post(slug) for slug in _get_posts_slugs()], key=lambda p: p.number
     )
 
-    posts: list[Post] = []
 
-    for slug in slugs:
-        post = get_post(slug)
-        if post:
-            posts.append(post)
-
-    return sorted(posts, key=lambda p: p.number_int)
+def _get_posts_slugs():
+    return [
+        f.removesuffix(".md")
+        for f in listdir(POSTS_PATH)
+        if re.match(POST_SLUG_REGEXP, f)
+    ]

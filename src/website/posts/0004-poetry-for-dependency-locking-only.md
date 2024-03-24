@@ -1,6 +1,6 @@
 ---
 title: Using Poetry exclusively for locking dependencies
-date: 2023-11-19T21:41:00+01:00
+date: 2023-11-19 21:41
 ---
 
 The bare minimum of bullcrap you'll have to accept in order to use Poetry exclusively for locking dependencies. No virtualenvs, no build system, no magic fuckery. Just lock dependencies.

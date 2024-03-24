@@ -1,6 +1,6 @@
 ---
 title: Python Simplified Concurrency Guide
-date: 2024-01-03T20:26:00+01:00
+date: 2024-01-03 20:26
 ---
 
 So you want to do multiple tasks concurrently in Python because your ugly ass code should be bothering as many CPU cores as possible all the time with its mere existence.

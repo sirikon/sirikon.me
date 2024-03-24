@@ -1,6 +1,6 @@
 ---
 title: Two WiFi access points. One SSID. It's okay
-date: 2023-10-13T18:40:00+01:00
+date: 2023-10-13 18:40
 ---
 
 Having two WiFi ACs with the same SSID and password allows you to have the same configuration on two different locations. Connect to WiFi at home and at the office by configuring your devices just once. Convenient in some scenarios.

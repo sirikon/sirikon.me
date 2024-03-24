@@ -8,6 +8,10 @@ from staticjinja import Site
 from sirikon_blog.posts import get_post, get_posts
 
 DOMAIN = "sirikon.neocities.org"
+TITLE = "Sirikon's Neocities"
+AUTHOR_NAME = "Carlos Fdez. Llamas"
+AUTHOR_EMAIL = "hello@sirikon.me"
+AUTHOR_MASTODON = "https://mastodon.social/@sirikon"
 
 
 def index_context():
@@ -19,10 +23,7 @@ def post_context(template):
 
 
 def atom_context():
-    return {
-        "posts": reversed(get_posts()),
-        "now": datetime.now(timezone.utc).isoformat(),
-    }
+    return {"posts": reversed(get_posts())}
 
 
 def render_post(site, template, **kwargs):
@@ -35,6 +36,14 @@ def render_post(site, template, **kwargs):
 
 def make_site():
     return Site.make_site(
+        env_globals={
+            "NOW": datetime.now(timezone.utc),
+            "DOMAIN": DOMAIN,
+            "TITLE": TITLE,
+            "AUTHOR_NAME": AUTHOR_NAME,
+            "AUTHOR_EMAIL": AUTHOR_EMAIL,
+            "AUTHOR_MASTODON": AUTHOR_MASTODON,
+        },
         searchpath="./src/website",
         outpath="./output",
         contexts=[
@@ -43,6 +52,10 @@ def make_site():
             (r".*\.md", post_context),
         ],
         rules=[(r"posts/.*\.md", render_post)],
+        filters={
+            "iso": lambda d: d.isoformat(),
+            "pad_post_number": lambda n: str(n).zfill(4),
+        },
     )
 
 

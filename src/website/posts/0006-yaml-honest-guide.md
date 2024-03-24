@@ -1,6 +1,6 @@
 ---
 title: YAML honest guide
-date: 2024-01-27T00:55:00+01:00
+date: 2024-01-27 00:55
 ---
 
 Use JSON instead.
