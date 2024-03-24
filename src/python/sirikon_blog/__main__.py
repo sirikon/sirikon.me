@@ -14,7 +14,7 @@ date_zero = datetime.fromtimestamp(0, timezone.utc)
 
 
 def index_context():
-    return {"posts": get_posts()}
+    return {"posts": reversed(get_posts())}
 
 
 def post_context(template):
