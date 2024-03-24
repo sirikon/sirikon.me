@@ -9,9 +9,19 @@ from sirikon_blog.posts import get_post, get_posts
 
 DOMAIN = "sirikon.neocities.org"
 TITLE = "Sirikon's Neocities"
-AUTHOR_NAME = "Carlos Fdez. Llamas"
+
+AUTHOR_NAME = "Carlos Fernández Llamas"
 AUTHOR_EMAIL = "hello@sirikon.me"
-AUTHOR_MASTODON = "https://mastodon.social/@sirikon"
+
+AUTHOR_MASTODON_SERVER = "mastodon.social"
+AUTHOR_MASTODON_USER = "sirikon"
+AUTHOR_MASTODON_URL = f"https://{AUTHOR_MASTODON_SERVER}/@{AUTHOR_MASTODON_USER}"
+
+AUTHOR_POSITION = "Platform Engineer"
+AUTHOR_EMPLOYER_NAME = "FeverUp.com"
+AUTHOR_EMPLOYER_URL = "https://feverup.com"
+
+AUTHOR_LINKEDIN_ID = "carlos-fernandez-llamas"
 
 
 def index_context():
@@ -42,7 +52,13 @@ def make_site():
             "TITLE": TITLE,
             "AUTHOR_NAME": AUTHOR_NAME,
             "AUTHOR_EMAIL": AUTHOR_EMAIL,
-            "AUTHOR_MASTODON": AUTHOR_MASTODON,
+            "AUTHOR_MASTODON_SERVER": AUTHOR_MASTODON_SERVER,
+            "AUTHOR_MASTODON_USER": AUTHOR_MASTODON_USER,
+            "AUTHOR_MASTODON_URL": AUTHOR_MASTODON_URL,
+            "AUTHOR_POSITION": AUTHOR_POSITION,
+            "AUTHOR_EMPLOYER_NAME": AUTHOR_EMPLOYER_NAME,
+            "AUTHOR_EMPLOYER_URL": AUTHOR_EMPLOYER_URL,
+            "AUTHOR_LINKEDIN_ID": AUTHOR_LINKEDIN_ID
         },
         searchpath="./src/website",
         outpath="./output",
