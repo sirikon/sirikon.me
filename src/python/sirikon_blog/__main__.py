@@ -25,7 +25,7 @@ def atom_context():
     fg = FeedGenerator()
     fg.id(f"https://{DOMAIN}")
     print(date_zero)
-    fg.updated(date_zero)
+    # fg.updated(date_zero)
     fg.title("Sirikon's Neocities")
     fg.author({"name": "Carlos Fdez. Llamas", "email": "hello@sirikon.me"})
     fg.language("en")
@@ -34,7 +34,7 @@ def atom_context():
     for post in posts:
         fe = fg.add_entry()
         fe.id(f"https://{DOMAIN}/posts/{post.slug}")
-        fe.updated(date_zero)
+        # fe.updated(date_zero)
         fe.title(post.title)
         fe.content(post.content_html, type="html")
 
