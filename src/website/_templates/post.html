@@ -1,8 +1,8 @@
 {% extends "_templates/base.html" %}
 
-{% block title %} - {{post.number}} {{ post.meta.title[0] }}{% endblock %}
+{% block title %} - {{post.number}} {{ post.title }}{% endblock %}
 
 {% block content %}
-<h1><span class="sn-post-number">{{post.number}}</span> {{ post.meta.title[0] }}</h1>
+<h1><span class="sn-post-number">{{post.number}}</span> {{ post.title }}</h1>
 {{ post.html }}
 {% endblock %}

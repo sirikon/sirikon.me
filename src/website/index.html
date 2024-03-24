@@ -1,11 +1,15 @@
 {% extends "_templates/base.html" %}
 
+{% block header %}
+<link href="atom.xml" type="application/atom+xml" rel="alternate" />
+{% endblock %}
+
 {% block content %}
 <ul class="sn-post-list">
   {% for post in posts %}
   <li>
     <span class="sn-post-number">{{post.number}}</span>
-    <a href="/posts/{{post.slug}}.html">{{post.meta.title[0]}}</a>
+    <a href="/posts/{{post.slug}}.html">{{post.title}}</a>
   </li>
   {% endfor %}
 </ul>

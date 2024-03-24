@@ -1,41 +1,16 @@
 import os
-from pathlib import Path
-import re
 import sys
+from pathlib import Path
+from datetime import datetime, timezone
 
 from staticjinja import Site
-import markdown
+from feedgen.feed import FeedGenerator
 
+from sirikon_blog.posts import get_post, get_posts
 
-def get_post(slug):
-    match = re.search(r"^([0-9]+)-", slug)
-    if not match:
-        return None
+DOMAIN = "sirikon.neocities.org"
 
-    number = match.group(1)
-    file = os.path.join("./src/website/posts", slug + ".md")
-    md = markdown.Markdown(
-        output_format="html5", extensions=["extra", "meta", "codehilite"]
-    )
-    html = md.convert(Path(file).read_text())
-    return {"slug": slug, "number": number, "html": html, "meta": md.Meta}
-
-
-def get_posts():
-    slugs = list(
-        reversed(
-            sorted(f.removesuffix(".md") for f in os.listdir("./src/website/posts"))
-        )
-    )
-
-    posts = []
-
-    for slug in slugs:
-        post = get_post(slug)
-        if post:
-            posts.append(post)
-
-    return posts
+date_zero = datetime.fromtimestamp(0, timezone.utc)
 
 
 def index_context():
@@ -44,6 +19,26 @@ def index_context():
 
 def post_context(template):
     return {"post": get_post(template.name.removeprefix("posts/").removesuffix(".md"))}
+
+
+def atom_context():
+    fg = FeedGenerator()
+    fg.id(f"https://{DOMAIN}")
+    print(date_zero)
+    fg.updated(date_zero)
+    fg.title("Sirikon's Neocities")
+    fg.author({"name": "Carlos Fdez. Llamas", "email": "hello@sirikon.me"})
+    fg.language("en")
+
+    posts = get_posts()
+    for post in posts:
+        fe = fg.add_entry()
+        fe.id(f"https://{DOMAIN}/posts/{post.slug}")
+        fe.updated(date_zero)
+        fe.title(post.title)
+        fe.content(post.content_html, type="text/html")
+
+    return {"content": fg.atom_str(pretty=True).decode()}
 
 
 def render_post(site, template, **kwargs):
@@ -58,7 +53,11 @@ def make_site():
     return Site.make_site(
         searchpath="./src/website",
         outpath="./output",
-        contexts=[(r"index.html", index_context), (r".*\.md", post_context)],
+        contexts=[
+            (r"index.html", index_context),
+            (r"atom.xml", atom_context),
+            (r".*\.md", post_context),
+        ],
         rules=[(r"posts/.*\.md", render_post)],
     )
 

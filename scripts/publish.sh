@@ -4,7 +4,7 @@ set -euo pipefail
 PYTHONPATH="$(pwd)/src/python"
 export PYTHONPATH
 
-poetry run python -m sirikon-blog build
+poetry run python -m sirikon_blog build
 
 cd "./output"
 while IFS= read -r line; do
