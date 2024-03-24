@@ -36,7 +36,7 @@ def atom_context():
         fe.id(f"https://{DOMAIN}/posts/{post.slug}")
         fe.updated(date_zero)
         fe.title(post.title)
-        fe.content(post.content_html, type="text/html")
+        fe.content(post.content_html, type="html")
 
     return {"content": fg.atom_str(pretty=True).decode()}
 
