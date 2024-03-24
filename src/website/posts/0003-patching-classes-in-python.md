@@ -1,5 +1,6 @@
 ---
 title: Patching classes in Python
+date: 2023-11-09T00:10:00+01:00
 ---
 
 Oh, so you found yourself needing to patch a class in Python? _again_? And some

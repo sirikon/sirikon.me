@@ -12,6 +12,7 @@ import markdown
 class Post:
     number: str
     number_int: int
+    date: str
     slug: str
     title: str
     content_html: str
@@ -33,6 +34,7 @@ def get_post(slug):
     return Post(
         number=number,
         number_int=int(number),
+        date=md.Meta["date"][0],
         slug=slug,
         title=md.Meta["title"][0],
         content_html=html,

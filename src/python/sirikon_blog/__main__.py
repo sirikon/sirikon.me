@@ -10,8 +10,6 @@ from sirikon_blog.posts import get_post, get_posts
 
 DOMAIN = "sirikon.neocities.org"
 
-date_zero = datetime.fromtimestamp(0, timezone.utc)
-
 
 def index_context():
     return {"posts": reversed(get_posts())}
@@ -22,7 +20,10 @@ def post_context(template):
 
 
 def atom_context():
-    return {"posts": reversed(get_posts())}
+    return {
+        "posts": reversed(get_posts()),
+        "now": datetime.now(timezone.utc).isoformat(),
+    }
 
 
 def render_post(site, template, **kwargs):

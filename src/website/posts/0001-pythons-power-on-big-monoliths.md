@@ -1,5 +1,6 @@
 ---
 title: Python's power on big monoliths
+date: 2023-10-11T20:45:00+01:00
 ---
 
 Python's unhinged dynamic nature, while having it's own drawbacks, has a big win in the context of big   monoliths that evolve rapidly within an organization.
