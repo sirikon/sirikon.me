@@ -4,7 +4,6 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 from staticjinja import Site
-from feedgen.feed import FeedGenerator
 
 from sirikon_blog.posts import get_post, get_posts
 
