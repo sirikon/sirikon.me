@@ -13,7 +13,7 @@ def get_post(slug):
         return None
 
     number = match.group(1)
-    file = os.path.join("./modules/website/posts", slug + ".md")
+    file = os.path.join("./src/website/posts", slug + ".md")
     md = markdown.Markdown(
         output_format="html5", extensions=["extra", "meta", "codehilite"]
     )
@@ -24,7 +24,7 @@ def get_post(slug):
 def get_posts():
     slugs = list(
         reversed(
-            sorted(f.removesuffix(".md") for f in os.listdir("./modules/website/posts"))
+            sorted(f.removesuffix(".md") for f in os.listdir("./src/website/posts"))
         )
     )
 
@@ -56,7 +56,7 @@ def render_post(site, template, **kwargs):
 
 def make_site():
     return Site.make_site(
-        searchpath="./modules/website",
+        searchpath="./src/website",
         outpath="./output",
         contexts=[(r"index.html", index_context), (r".*\.md", post_context)],
         rules=[(r"posts/.*\.md", render_post)],

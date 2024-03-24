@@ -1,6 +1,0 @@
-services:
-  sirikon-neocities:
-    build:
-      context: ./
-      dockerfile: ./modules/docker/Dockerfile
-      target: base

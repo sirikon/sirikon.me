@@ -1,3 +1,0 @@
-staticjinja==5.0.0
-markdown==3.5
-Pygments==2.16.1

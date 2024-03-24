@@ -1,3 +1,3 @@
-# Sirikon's Neocities
+# Sirikon's Blog
 
 https://sirikon.neocities.org

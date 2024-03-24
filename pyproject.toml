@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "sirikon-blog"
+version = "0.0.0"
+description = ""
+authors = ["Carlos Fdez. Llamas <hello@sirikon.me>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+staticjinja = "^5.0.0"
+markdown = "^3.5"
+Pygments = "^2.16.1"

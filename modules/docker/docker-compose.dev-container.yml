@@ -1,6 +1,0 @@
-services:
-  sirikon-neocities:
-    ports:
-      - 0.0.0.0:8000:80
-    volumes:
-      - ./:/workspace

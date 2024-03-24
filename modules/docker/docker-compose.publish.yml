@@ -1,6 +1,0 @@
-services:
-  sirikon-neocities:
-    build:
-      target: publish-with-guile-neocities
-    volumes:
-      - ./:/workspace
