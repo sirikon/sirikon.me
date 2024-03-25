@@ -11,7 +11,7 @@ DOMAIN = "sirikon.neocities.org"
 TITLE = "Sirikon's Neocities"
 
 AUTHOR_NAME = "Carlos Fernández Llamas"
-AUTHOR_EMAIL = "hello@sirikon.me"
+AUTHOR_EMAILS = ["hello@sirikon.me", "carlos@cojoneslargos.com"]
 
 AUTHOR_MASTODON_SERVER = "mastodon.social"
 AUTHOR_MASTODON_USER = "sirikon"
@@ -51,14 +51,14 @@ def make_site():
             "DOMAIN": DOMAIN,
             "TITLE": TITLE,
             "AUTHOR_NAME": AUTHOR_NAME,
-            "AUTHOR_EMAIL": AUTHOR_EMAIL,
+            "AUTHOR_EMAILS": AUTHOR_EMAILS,
             "AUTHOR_MASTODON_SERVER": AUTHOR_MASTODON_SERVER,
             "AUTHOR_MASTODON_USER": AUTHOR_MASTODON_USER,
             "AUTHOR_MASTODON_URL": AUTHOR_MASTODON_URL,
             "AUTHOR_POSITION": AUTHOR_POSITION,
             "AUTHOR_EMPLOYER_NAME": AUTHOR_EMPLOYER_NAME,
             "AUTHOR_EMPLOYER_URL": AUTHOR_EMPLOYER_URL,
-            "AUTHOR_LINKEDIN_ID": AUTHOR_LINKEDIN_ID
+            "AUTHOR_LINKEDIN_ID": AUTHOR_LINKEDIN_ID,
         },
         searchpath="./src/website",
         outpath="./output",
