@@ -7,7 +7,7 @@ Turns out Docker Compose is pretty lazy and rigid when dealing with networks.
 
 If you create a Docker container and join it to a bridge (default) network, the container's ID and name will resolve to the container's IP address in Docker's internal DNS server.
 
-On top of that, Docker Compose will add the service name to the DNS server. No matter what. `hostname` doesn't replace the service name, just adds another name that resolves to the same thing.
+On top of that, Docker Compose will add the service name to the DNS server. **No matter what**. `hostname` doesn't replace the service name, just adds another name that resolves to the same thing. [I can point you to the exact line in the code](https://github.com/docker/compose/blob/b032999f06b3e18036f6777e121093f38a3ce627/pkg/compose/create.go#L415).
 
 All these DNS names are added to **every network the container joins**, and you can't prevent that.
 
