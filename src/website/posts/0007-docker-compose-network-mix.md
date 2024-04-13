@@ -14,12 +14,12 @@ All these DNS names are added to **every network the container joins**, and you 
 And that makes a funny scenario if you're trying to connect two projects. Imagine a escenario with these services:
 
 - Project `alpha`
-    - `web`: calls to `api`
-    - `api`: calls to `db` and `beta`'s `api`
-    - `db`
+  - `web`: calls to `api`
+  - `api`: calls to `db` and `beta`'s `api`
+  - `db`
 - Project `beta`
-    - `api`: calls to `db`
-    - `db`
+  - `api`: calls to `db`
+  - `db`
 
 If you connect `beta`'s `api` service to `alpha`'s network and `alpha`'s `web` makes a request to `api`, who will respond? Well, both `api`s from `alpha` and `beta` are registered at the DNS name `api`.
 

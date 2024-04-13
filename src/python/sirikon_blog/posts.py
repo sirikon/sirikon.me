@@ -24,7 +24,7 @@ def get_post(slug):
     number = int(re.match(POST_SLUG_REGEXP, slug).group(1))
     post_file = join(POSTS_PATH, slug + ".md")
     md = markdown.Markdown(
-        output_format="html5", extensions=["extra", "meta", "codehilite"]
+        output_format="html5", extensions=["extra", "meta", "codehilite"], tab_length=2
     )
     html = md.convert(Path(post_file).read_text())
 
