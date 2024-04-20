@@ -28,6 +28,12 @@ Don't get fooled by the fact that it supports something like SQL. As a colleague
 
 It provides a way to have widely distributed and non-related information (that you will never cross-reference) splitted in multiple nodes, being able to do basic read/write operations that a single node can handle in isolation, with strong replication and fault-tolerance.
 
+## EDIT: Amazon Keyspaces
+
+AWS's serverless Apache Cassandra offering. It's trash.
+
+It has no support for secondary indexes, materialized views, logged batches or aggregates. Turns a limited option into a stupid one, because you could pick any eventually-consistent key-value store and achieve the same.
+
 ## Wraping up
 
-If you're interested in reading more, the official arquitecture docs are pretty good: https://cassandra.apache.org/doc/latest/cassandra/architecture/index.html
+If you're interested in reading more, [the official arquitecture docs are pretty good](https://cassandra.apache.org/doc/latest/cassandra/architecture/index.html).
