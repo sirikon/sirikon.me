@@ -1,3 +1,3 @@
-# Sirikon's Blog
+# `sirikon.me`
 
-https://sirikon.neocities.org
+https://sirikon.me

@@ -5,10 +5,10 @@ from datetime import datetime, timezone
 
 from staticjinja import Site
 
-from sirikon_blog.posts import get_post, get_posts
+from sirikon_me.posts import get_post, get_posts
 
-DOMAIN = "sirikon.neocities.org"
-TITLE = "Sirikon's Neocities"
+DOMAIN = "sirikon.me"
+TITLE = "sirikon.me"
 
 AUTHOR_NAME = "Carlos Fernández Llamas"
 AUTHOR_EMAILS = ["hello@sirikon.me", "carlos@cojoneslargos.com"]
@@ -78,7 +78,7 @@ def make_site():
 def cli():
     args = sys.argv[1:]
     if len(args) == 0:
-        print("Usage: python -m sirikon-neocities build/watch")
+        print("Usage: python -m sirikon_me build/watch")
         exit(1)
     command = args[0]
 

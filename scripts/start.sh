@@ -7,7 +7,7 @@ export PYTHONPATH
 function main() {
   trap cleanup EXIT
   log "Starting server on http://127.0.0.1:8000"
-  poetry run python -m sirikon_blog watch &
+  poetry run python -m sirikon_me watch &
   poetry run python -m http.server --directory output 8000 &
   wait -n
 }
