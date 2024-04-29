@@ -7,9 +7,9 @@
 
   {% for post in posts %}
   <entry>
-    <id>https://{{DOMAIN}}/posts/{{post.slug}}</id>
+    <id>https://{{DOMAIN}}/posts/{{post.slug}}.html</id>
     <title>{{post.title}}</title>
-    <link href="https://{{DOMAIN}}/posts/{{post.slug}}" rel="alternate" />
+    <link href="https://{{DOMAIN}}/posts/{{post.slug}}.html" rel="alternate" />
     <published>{{post.date|iso}}</published>
     <updated>{{post.date|iso}}</updated>
     <author>
