@@ -13,4 +13,4 @@ COPY ./scripts ./scripts
 RUN ./scripts/install.sh
 COPY ./src ./src
 RUN ./scripts/build.sh
-RUN mv ./output /output
+RUN mv ./output /dist
