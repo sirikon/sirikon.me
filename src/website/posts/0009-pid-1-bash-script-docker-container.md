@@ -85,4 +85,9 @@ I always create a function called `main` for two reasons:
 
 First, it allows me to define helper functions _after_ using them, and I think that having that part of the script be the first one visible on the file is useful for knowing that the fuck is going on.
 
-Second, combining this with a `main "$@"` at the end of the file, we're forcing Bash to read and interpret the whole file. Why is this important? Bash interprets files lazily, whenever it needs to interpret more code, it will keep reading the file, it doesn't matter if the file changed during the execution.
+Second, combining this with a `main "$@"` at the end of the file, we're forcing Bash to read and interpret the whole file. Why is this important? Bash interprets files lazily, whenever it needs to interpret more code, it will keep reading the file, it doesn't matter if the file changed during the execution. If a Bash script starts, encounters a `sleep 10`, the script file changes, and after 10 seconds the Bash script continues, it will read the **new** contents of the file starting from whatever byte it stopped reading when found the `sleep 10`, actually executing a mix of the old and new script, making a lot of really funny bugs to debug.
+
+```bash
+trap 'true' SIGINT SIGTERM
+```
+
