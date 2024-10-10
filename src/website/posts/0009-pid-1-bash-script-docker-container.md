@@ -83,7 +83,7 @@ First, it allows me to define helper functions that are written _after_ the plac
 
 Second, combining this with a `main "$@"` at the end of the file, we're forcing Bash to read and interpret the whole file. Why is this important? Bash interprets files lazily, whenever it needs to interpret more code, it will keep reading the file, it doesn't matter if the file changed during the execution. If a Bash script starts, encounters a `sleep 10`, the script file changes, and after 10 seconds the Bash script continues, it will read the **new** contents of the file starting from whatever byte it stopped reading when found the `sleep 10`, actually executing a mix of the old and new script, making a lot of really funny bugs to debug.
 
-(By the way, `"$@"` is for passing all the arguments that the script receives to `main`).
+By the way, `"$@"` is for passing all the arguments that the script receives to the `main` function. `$@` is the argument collection, and by putting it between double quotes `""` it gets expanded to a list of arguments without resplitting them on whitespace.
 
 ```bash
 trap 'true' SIGINT SIGTERM
@@ -104,7 +104,7 @@ This is where we define all the processes that we want to run in the container, 
 
 The ampersand (`&`) at the end indicates that the command that precedes it will be executed in the background, in another shell.
 
-We don't need a second shell in this case, as we're just executing a single command. To solve this, we can use [`exec`](https://www.gnu.org/software/bash/manual/bash.html#index-exec), which replaces the running shell with the new command, giving him its own PID.
+We don't need a second shell in this case, as we're just executing a single command. To solve this, we can use [`exec`](https://www.gnu.org/software/bash/manual/bash.html#index-exec), which replaces the running shell with the new command, giving it its own PID.
 
 Now the command's PPID (parent PID) is `1` instead of having a bash shell in the middle doing nothing and having to deal with repeating signals again to the child process.
 
