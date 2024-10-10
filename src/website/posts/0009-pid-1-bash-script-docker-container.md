@@ -75,3 +75,14 @@ The builtin command [`set`](https://www.gnu.org/software/bash/manual/bash.html#T
 
 It's a sane default that I always use for Bash scripts.
 
+```bash
+function main {
+  # ...
+}
+```
+
+I always create a function called `main` for two reasons:
+
+First, it allows me to define helper functions _after_ using them, and I think that having that part of the script be the first one visible on the file is useful for knowing that the fuck is going on.
+
+Second, combining this with a `main "$@"` at the end of the file, we're forcing Bash to read and interpret the whole file. Why is this important? Bash interprets files lazily, whenever it needs to interpret more code, it will keep reading the file, it doesn't matter if the file changed during the execution.
