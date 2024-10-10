@@ -18,6 +18,11 @@ article {
   margin: 2em 0;
 }
 
+blockquote {
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
+  padding-left: 1em;
+}
+
 .sn-container {
   max-width: 600px;
   margin: auto;
@@ -28,10 +33,10 @@ article {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: .8em 0;
+  padding: 0.8em 0;
 }
 
-.sn-header>a {
+.sn-header > a {
   display: block;
   font-size: 1em;
   text-transform: uppercase;
@@ -48,11 +53,11 @@ article {
 }
 
 .sn-header-menu li a::before {
-  content: '[';
+  content: "[";
 }
 
 .sn-header-menu li a::after {
-  content: ']';
+  content: "]";
 }
 
 .sn-post-list {
@@ -72,7 +77,7 @@ article {
 
 article code {
   background-color: rgba(0, 0, 0, 0.05);
-  padding: 0 .3em;
+  padding: 0 0.3em;
 }
 
 article .codehilite code {
