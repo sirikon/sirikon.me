@@ -146,9 +146,7 @@ __Well__, there's a special case in `kill` for the pid `-1`:
 
 >  -1: All processes with a PID larger than 1 are signaled. —— [kill(1) man page](https://www.man7.org/linux/man-pages/man1/kill.1.html)
 
-We're not signaling the process group `1` (which would include the PID `1`, and we don't want the script to signal itself!), we're signaling every process with a PID larger than `1`, which is, every process except the script. Exactly what we need. Convenient!
-
-(Note how this script would not work at all if it wasn't PID `1`. You would need to juggle with [Job Control](https://www.gnu.org/software/bash/manual/html_node/Job-Control.html) or [`pkill -P`](https://linux.die.net/man/1/pkill)).
+We're not signaling the process group `1`, we're signaling every process with a PID larger than `1`, which is, every process except the script. Exactly what we need. Convenient!
 
 ```bash
 wait
@@ -159,3 +157,23 @@ And finally, we make a final call to `wait`. At this point, for one reason or an
 When the `wait` finishes, the script finishes.
 
 The End.
+
+**UPDATE**: What if you want to do the same thing (a script goberning a bunch of child processes), but without it being a PID 1 process?
+
+Just change this line:
+
+```bash
+kill -s SIGINT -1
+```
+
+So it looks like this:
+
+```bash
+kill -s SIGINT -$$
+```
+
+Replacing `-1` with `-$$` we'll be sending `SIGINT`s to all the processes inside the Bash script's process group. Notice that the Bash script itself is inside this process group, so it will receive the `SIGINT`. This is not a problem because we're trapping all `SIGINT`s and doing [nothing, successfully](https://linux.die.net/man/1/true), so it won't matter, but take it into consideration if you want to change the signals used.
+
+And in case you use `kill` without specifying a signal, remember to use `--` so it doesn't think that `-$$` is the signal.
+
+> either a signal must be specified first, or the argument must be preceded by a `--` option, otherwise it will be taken as the signal to send. —— [kill man page](https://www.man7.org/linux/man-pages/man1/kill.1.html)
