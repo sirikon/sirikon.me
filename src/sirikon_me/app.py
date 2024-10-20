@@ -76,5 +76,5 @@ def post(post_slug: str):
 def atom():
     return Response(
         render_template("atom.xml", posts=reversed(get_posts())),
-        content_type="text/xml",
+        content_type="application/xml",
     )
