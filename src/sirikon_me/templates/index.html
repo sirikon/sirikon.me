@@ -9,7 +9,7 @@
   {% for post in posts %}
   <li>
     <span class="sn-post-number">{{post.number|pad_post_number}}</span>
-    <a href="/posts/{{post.slug}}.html">{{post.title}}</a>
+    <a href="{{ url_for('post', post_slug=post.slug) }}">{{post.title}}</a>
   </li>
   {% endfor %}
 </ul>
