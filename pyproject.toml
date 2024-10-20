@@ -3,6 +3,7 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
-staticjinja = "^5.0.0"
+flask = "^3.0.3"
+Frozen-Flask = "^1.0.2"
 markdown = "^3.5"
 Pygments = "^2.16.1"
