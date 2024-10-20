@@ -81,7 +81,7 @@ First, it allows me to define helper functions that are written _after_ the plac
 
 Second, combining this with a `main "$@"` at the end of the file, we're forcing Bash to read and interpret the whole file. Why is this important? Bash interprets files lazily, whenever it needs to interpret more code, it will keep reading the file, it doesn't matter if the file changed during the execution. If a Bash script starts, encounters a `sleep 10`, the script file changes, and after 10 seconds the Bash script continues, it will read the **new** contents of the file starting from whatever byte it stopped reading when found the `sleep 10`, actually executing a mix of the old and new script, making a lot of really funny bugs to debug.
 
-By the way, `"$@"` is for passing all the arguments that the script receives to the `main` function. `$@` is the argument collection, and by putting it between double quotes `""` it gets expanded to a list of arguments without resplitting them on whitespace.
+By the way, `"$@"` is for passing all the arguments that the script receives to the `main` function. `$@` is the argument collection, and by putting it between double quotes `""` it gets expanded to a list of arguments without resplitting them on whitespace. It's not needed in this script, as we're not passing any arguments to it, but just like the `set -euo pipefail`, it's a sane default that I always use.
 
 ```bash
 trap 'true' SIGINT SIGTERM
