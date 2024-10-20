@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://{{DOMAIN}}/</id>
+  <title>{{TITLE}}</title>
+  <link href="https://{{DOMAIN}}/atom.xml" rel="self" />
+  <updated>{{NOW|iso}}</updated>
+
+  {% for post in posts %}
+  <entry>
+    <id>https://{{DOMAIN}}/posts/{{post.slug}}.html</id>
+    <title>{{post.title}}</title>
+    <link href="https://{{DOMAIN}}/posts/{{post.slug}}.html" rel="alternate" />
+    <published>{{post.date|iso}}</published>
+    <updated>{{post.date|iso}}</updated>
+    <author>
+      <name>{{AUTHOR_NAME}}</name>
+      <email>{{AUTHOR_EMAILS[0]}}</email>
+    </author>
+    <content type="html">{{post.content_html}}</content>
+  </entry>
+  {% endfor %}
+
+</feed>

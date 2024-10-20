@@ -1,0 +1,8 @@
+{% extends "_base.html" %}
+
+{% block title %} - {{post.number|pad_post_number}} {{ post.title }}{% endblock %}
+
+{% block content %}
+<h1><span class="sn-post-number">{{post.number|pad_post_number}}</span> {{ post.title }}</h1>
+{{ post.content_html|safe }}
+{% endblock %}

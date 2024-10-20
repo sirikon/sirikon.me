@@ -5,7 +5,7 @@ PYTHONPATH="$(pwd)/src"
 export PYTHONPATH
 exec ./.venv/bin/python -m flask \
   --app sirikon_me.app \
-  run --port 8000 --reload
+  run --port 8000 --debug
 
 # function main() {
 #   trap cleanup EXIT

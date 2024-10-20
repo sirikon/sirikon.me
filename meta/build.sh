@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PYTHONPATH="$(pwd)/src/python"
+PYTHONPATH="$(pwd)/src"
 export PYTHONPATH
-
-poetry run python -m sirikon_me build
+exec ./.venv/bin/python -m sirikon_me.freeze
