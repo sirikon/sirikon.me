@@ -7,9 +7,7 @@ You wake up one morning, feeling bit spicy, daring to break rules, but you aren'
 
 As an actual person that works in this garbage fire called software development and NOT a Medium shitposter, this is something that you might run into.
 
-Having multiple processes in a container involves that, at least, one of them should be the ruling one, PID `1`. (Sorry anarchists and flat organizations believers, reality exists, go cry at your V for Vendetta poster).
-
-If you're still with me, a PID `1` process in a Docker container should:
+Having multiple processes in a container involves that, at least, one of them should be the ruling one, PID `1`, which should:
 
 - Be the first one running (duh).
 - Start the rest of processes.
