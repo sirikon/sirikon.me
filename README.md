@@ -1,6 +1,6 @@
 # [sirikon.me](https://sirikon.me)
 
 ```bash
-./scripts/install.sh
-./scripts/start.sh
+./meta/install.sh
+./meta/start.sh
 ```
