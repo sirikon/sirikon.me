@@ -44,9 +44,14 @@ def iso_filter(d):
     return d.isoformat()
 
 
-@app.template_filter("pad_post_number")
-def pad_post_number_filter(n):
+@app.template_filter("post_number")
+def post_number_filter(n):
     return str(n).zfill(4)
+
+
+@app.template_filter("post_date")
+def post_date_filter(d: datetime):
+    return "-".join([str(d.year).zfill(4), str(d.month).zfill(2), str(d.day).zfill(2)])
 
 
 @app.get("/")

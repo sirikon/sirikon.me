@@ -8,8 +8,9 @@
 <ul class="sn-post-list">
   {% for post in posts %}
   <li>
-    <span class="sn-post-number">{{post.number|pad_post_number}}</span>
+    <span class="sn-post-number">{{post.number|post_number}}</span>
     <a href="{{ url_for('post', post_slug=post.slug) }}">{{post.title}}</a>
+    <span class="sn-post-date">{{post.date|post_date}}</span>
   </li>
   {% endfor %}
 </ul>

@@ -65,7 +65,8 @@ blockquote {
   padding: 0;
 }
 
-.sn-post-number {
+.sn-post-number,
+.sn-post-date {
   color: grey;
 }
 
