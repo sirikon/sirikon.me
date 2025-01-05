@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Personal website of {{AUTHOR_NAME}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{TITLE}}{% block title %}{% endblock %}</title>
   <link rel="me" href="{{AUTHOR_MASTODON_URL}}">
   <link rel="stylesheet" href="/static/codehilite.css">
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
   {% block header %}{% endblock %}
 </head>
 
