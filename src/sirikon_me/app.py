@@ -18,6 +18,8 @@ AUTHOR_EMPLOYER_URL = "https://feverup.com"
 
 AUTHOR_LINKEDIN_ID = "carlos-fernandez-llamas"
 
+CACHE_BUSTER = int(datetime.now(timezone.utc).timestamp())
+
 app = Flask(__name__)
 
 
@@ -25,6 +27,7 @@ app = Flask(__name__)
 def global_variables():
     return {
         "NOW": datetime.now(timezone.utc),
+        "CACHE_BUSTER": CACHE_BUSTER,
         "DOMAIN": DOMAIN,
         "TITLE": TITLE,
         "AUTHOR_NAME": AUTHOR_NAME,

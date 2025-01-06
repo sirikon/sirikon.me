@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{TITLE}}{% block title %}{% endblock %}</title>
   <link rel="me" href="{{AUTHOR_MASTODON_URL}}">
-  <link rel="stylesheet" href="/static/codehilite.css">
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/codehilite.css?v={{CACHE_BUSTER}}">
+  <link rel="stylesheet" href="/static/style.css?v={{CACHE_BUSTER}}">
   <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
   {% block header %}{% endblock %}
 </head>
