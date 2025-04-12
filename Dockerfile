@@ -1,9 +1,9 @@
-ARG PYTHON_VERSION=3.12.7
+ARG PYTHON_VERSION=3.13.3
 FROM python:${PYTHON_VERSION}-slim-bookworm
 
 # Poetry
 RUN apt-get update && apt-get install -y curl
-ARG POETRY_VERSION=1.8.4
+ARG POETRY_VERSION=2.1.2
 ENV POETRY_VERSION="${POETRY_VERSION}"
 ENV POETRY_HOME="/poetry"
 ENV PATH="/poetry/bin:${PATH}"
