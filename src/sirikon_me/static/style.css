@@ -2,6 +2,8 @@ body {
   background-color: whitesmoke;
   font-family: monospace;
   margin: 0 1em;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 a:not(.sn-discrete-link) {
