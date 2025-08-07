@@ -1,6 +1,1 @@
-# [sirikon.me](https://sirikon.me)
-
-```bash
-./meta/install.sh
-./meta/start.sh
-```
+# Moved to [Codeberg](https://codeberg.org/sirikon/sirikon.me)
